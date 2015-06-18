@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-6 col-md-offset-2"  style="background-color:lightblue; padding: 60px; padding-left: 100px;padding-top:10px;">
+    <form action=" /User/onAdd" enctype="multipart/form-data">
+
+        <h1 style="text-decoration:white"> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Add User</h1>
+        <br />
+
+        <div class="pull-left">Name:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</div><input type="text" name="name" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" /><br /><br />
+
+        <div class="pull-left">User Name:</div><input type="text" name="userId" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" /><br /><br />
+
+        <div class="pull-left">Password: &nbsp;</div><input type="password" name="userPassword" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" /><br /><br />
+
+        &nbsp;<div class="pull-left">Email:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</div> <input type="email" name="email" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" /><br />
+        <br />
+
+
+        &nbsp; <div class="pull-left">
+            Age: &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+        </div><input type="text" name="age" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" />
+        <br> <br />
+
+        Sex:&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        <select name="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+
+        </select>
+
+        <br> <br />
+
+
+        Upload Image:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;     <input type="file" name="image" />
+
+
+
+
+        <br /><br />
+        <input type="submit" class="btn-default" value="Add User" style="margin-left:160px">
+    </form>
+
+
+</div>
+
+

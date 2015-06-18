@@ -1,0 +1,31 @@
+﻿@model List<emiratesTermProject.Models.User>
+
+@{
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<h1>Edit Profile</h1>
+<div style="background-color:white; height: 410px; width: 550px; margin-top: 70px; margin-left: 350px; padding: 60px; padding-left: 100px;padding-top:10px;">
+    <form action=" /UserProfile/update" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="@Model[0].Id" name="Id" />
+      
+        <h1 style="text-decoration:white"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Update</h1>
+        <br />
+
+        <div class="pull-left">Name:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</div><input type="text" value="@Model[0].name" name="name" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" /><br /><br />
+
+       
+
+        <div class="pull-left">Password: &nbsp;</div><input type="password" value="@Model[0].userPassword" name="userPassword" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" /><br /><br />
+
+        &nbsp;<div class="pull-left">Email:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</div> <input type="email" value="@Model[0].email" name="email" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" /><br />
+        <br />
+        Image:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+        <input type="file" name="image"/>
+        <br /><br />
+        <input type="submit" class="btn-default" value="Update" style="margin-left:160px">
+    </form>
+
+
+</div>
+
+

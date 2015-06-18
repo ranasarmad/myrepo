@@ -1,0 +1,149 @@
+﻿@model List<emiratesTermProject.Models.User>
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>view user </h1>
+
+
+
+
+
+<div id="checking">Searching...</div>
+
+
+
+<div class="pull-left">@Html.Label("User Name") </div>    
+@Html.TextBox("userId", null, new { style = "border-color:lightsteelblue;box-shadow:inherit", @class = "col-lg-offset-1 col-lg-7", id = "UserName" })<br /><br />
+<input type="button" id="b1" value="Check" />
+<div id="result"></div>
+
+@Scripts.Render("~/bundles/jquery")
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#checking').hide();
+
+        $('#b1').click(function () {
+
+            var userName = $('#UserName').val();
+
+            //alert('User Name ='+ userName);
+            $('#checking').show();
+            $.getJSON("/User/searchById?UserName=" + userName, function (data) {
+                $('#checking').hide();
+                
+
+                $("#t1 td").remove();
+                //var table=document.getElementById("t1");
+                $.each(data, function (i, item) {
+                //    var row = table.insertRow(6);
+                //    var cell1 = row.insertCell(0);
+                //    cell1.innerHtml = "hi";
+                    $("#t1").append('<tr> <td >' + item.userId + '</td>' + '<td >' + item.name + '</td>' + '<td >' + item.userPassword + '</td>' + '<td >' + item.sex + '</td>' + '<td >' + item.age + '</td>' + '<td >' + item.email + '</td>' + '</tr>');
+                    //alert('Id = ' + item.Id + " Name = " + item.Name);
+                });
+
+               
+                   
+                    
+
+
+
+
+
+            });
+
+        });
+
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="box-body table-responsive no-padding">
+    <table class="table table-hover" id="t1">
+      <tr>
+    <th>UserId</th>
+    <th>Name</th>
+    <th>Password</th>
+    <th>sex</th>
+    <th>Age</th>
+    <th>Email</th>
+</tr>
+
+@foreach (var q in Model)
+{
+
+
+    <tr>
+        <td>@q.userId</td>
+        <td>@q.name</td>
+        <td>@q.userPassword</td>
+        <td>@q.sex</td>
+        <td>@q.age</td>
+        <td>@q.email</td>
+
+    </tr>
+
+
+
+}
+        @*<tr>
+            <td>219</td>
+            <td>Alexander Pierce</td>
+            <td>11-7-2014</td>
+            <td><span class="label label-warning">Pending</span></td>
+            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+        </tr>
+        <tr>
+            <td>657</td>
+            <td>Bob Doe</td>
+            <td>11-7-2014</td>
+            <td><span class="label label-primary">Approved</span></td>
+            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+        </tr>
+        <tr>
+            <td>175</td>
+            <td>Mike Doe</td>
+            <td>11-7-2014</td>
+            <td><span class="label label-danger">Denied</span></td>
+            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+        </tr>*@
+    </table>
+</div>

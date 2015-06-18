@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<div class="col-md-7 col-md-offset-3"  style="background-color:white; padding: 60px; padding-left: 100px;padding-top:10px;">
+    @using (@Html.BeginForm("onSignUp", "signUp" ))
+            {
+   
+        <h1 style="text-decoration:white"><div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>Sign Up</h1>
+        <br />
+
+    <div class="pull-left">@Html.Label("Name") &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</div>
+                @Html.TextBox("name", null, new {style="border-color:lightsteelblue;box-shadow:inherit", @class="col-lg-offset-1 col-lg-7" }) <br /><br />
+
+        
+        
+        
+        
+      
+      <div id="checking">Checking...</div>
+      
+      
+        <div class="pull-left">@Html.Label("User Name") </div>    @Html.TextBox("userId", null, new { style = "border-color:lightsteelblue;box-shadow:inherit", @class = "col-lg-offset-1 col-lg-7",id = "UserName"  })<br /><br />
+        <input type="button" id="b1" value="Check" />
+         <div id="result"></div>
+      @Scripts.Render("~/bundles/jquery")
+      
+      
+      <script>
+
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            $('#b1').click(function () {
+               
+                var userName = $('#UserName').val();
+
+                //alert('User Name ='+ userName);
+                $('#checking').show();
+                $.getJSON("/signUp/CheckUserName?UserName=" + userName, function (data)
+                {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("User already exists in database");
+                        
+                    }
+                    else {
+                        $('#result').text("User Name is available");
+                    }
+                });
+
+            });
+
+        });
+    </script>
+      
+      
+      
+      
+      
+      
+      
+      
+
+        
+        
+        
+        
+    <br /><br />
+
+        <div class="pull-left">@Html.Label("Password") &nbsp;</div>    @Html.TextBox("userPassword", null, new { style = "border-color:lightsteelblue;box-shadow:inherit", @class = "col-lg-offset-1 col-lg-7", type = "password" })<br />
+
+        <div>&nbsp;</div>
+    <div class="pull-left">@Html.Label("Email") &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</div><input type="email" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" id="email">  @*@Html.TextBox("email", null, new { id="email",style = "border-color:lightsteelblue;box-shadow:inherit", @class = "col-lg-offset-1 col-lg-7", type = "email" })*@
+    <br />
+
+
+    <div>&nbsp;</div>
+    <div class="pull-left">
+        @Html.Label("Age")  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+    </div> @Html.TextBox("age", null, new { style = "border-color:lightsteelblue;box-shadow:inherit", @class = "col-lg-offset-1 col-lg-7", type = "password" })
+    <br> <br />
+
+    @Html.Label("sex") 
+    <select name="sex">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+
+    </select>
+
+    <br> <br />
+
+    <input type="submit" class="btn-default" value="Sign Up" style="margin-left:160px">
+    }
+
+
+</div>
+
+
+

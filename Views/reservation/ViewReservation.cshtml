@@ -1,0 +1,64 @@
+﻿@model List<emiratesTermProject.Models.ticketReserv>
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>view Reservation </h1>
+
+
+
+<div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
+        <tr>
+            <th>TicketNo</th>
+            <th>Name</th>
+            <th>EMAIL</th>
+            <th>Class</th>
+            <th>Quantity</th>
+            <th>Payment</th>
+            <th>Shedule Id</th>
+        </tr>
+
+        @foreach (var q in Model)
+        {
+
+
+            <tr>
+                <td>@q.Id</td>
+                <td>@q.name</td>
+                <td>@q.email</td>
+                <td>@q.flightClass</td>
+                <td>@q.quantity</td>
+                <td>@q.payment</td>
+                <td>@q.sheduleId</td>
+
+            </tr>
+
+
+
+        }
+        @*<tr>
+                <td>219</td>
+                <td>Alexander Pierce</td>
+                <td>11-7-2014</td>
+                <td><span class="label label-warning">Pending</span></td>
+                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+            </tr>
+            <tr>
+                <td>657</td>
+                <td>Bob Doe</td>
+                <td>11-7-2014</td>
+                <td><span class="label label-primary">Approved</span></td>
+                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+            </tr>
+            <tr>
+                <td>175</td>
+                <td>Mike Doe</td>
+                <td>11-7-2014</td>
+                <td><span class="label label-danger">Denied</span></td>
+                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+            </tr>*@
+    </table>
+</div>

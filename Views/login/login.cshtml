@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+<div class="col-md-8 col-md-offset-4">
+    @using (@Html.BeginForm("login", "login"))
+    {
+
+        <h1> &nbsp; &nbsp; &nbsp;User Login</h1>
+        <br />
+        <div>&nbsp;</div>
+
+    
+        @Html.Label("UserName")
+        @Html.TextBox("n1", null, new {id="email",placeholder = "User Name" })
+        <br /> <br />
+        <div>&nbsp;</div>@Html.Label("Password")    @Html.TextBox("p1", null, new { type = "password", placeholder = "password" })
+        <br> <br />
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+        <input class="col-md-offset-2" type="submit" value="Login">
+    }
+
+</div>

@@ -1,0 +1,60 @@
+﻿@model emiratesTermProject.Models.schedule
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+@*<div style="background-color:whitesmoke" class="box-body table-responsive no-padding">*@
+    <table style="background-color:whitesmoke" border="1" class="table table-responsive">
+        <tr>
+            <th>Name</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Class</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Flight#</th>
+            <th>Quantity</th>
+        </tr>
+
+
+            <tr>
+                <td>@Session["name"]</td>
+    <td>@Model.sourceAirport</td>
+    <td>@Model.destinstionAirport</td>
+    <td>@Session["flightClass"]</td>
+    <td>@Model.date</td>
+    <td>@Model.time</td>
+    <td>@Model.flightNo</td>
+    <td>@Session["quantity"]</td>
+
+            </tr>
+
+
+
+        
+
+    </table>
+@*</div>*@
+
+
+   
+    @*Pssenger Name:
+        <h1>@Session["name"]</h1>
+        From:
+        <h2>@Model.sourceAirport</h2>
+        To:
+        <h2>@Model.destinstionAirport</h2>
+        Class:
+        @Session["flightClass"]
+        Date:
+        @Model.date
+        Time:
+        @Model.time
+        FLight:
+        @Model.flightNo
+        Reserved Seat:
+        @Session["quantity"]*@

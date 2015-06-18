@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-md-7 col-md-offset-3"  style="background-color:white;  padding: 60px; padding-left: 100px;padding-top:10px;">
+    <form action="/booking/payment/">
+        <h1 style="text-decoration:white"> &nbsp; &nbsp;&nbsp;Customer Details</h1>
+        <br />
+
+        <div class="pull-left">Name:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</div><input type="text" name="n1" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" /><br /><br />
+
+        &nbsp;<div class="pull-left">Email:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</div> <input type="email" name="e1" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" /><br />
+        <br />
+        &nbsp; <div class="pull-left">
+            Country: &nbsp;&nbsp;&nbsp; &nbsp;
+        </div><input type="text" style="border-color:lightsteelblue;box-shadow:inherit" class="col-lg-offset-1 col-lg-7" />
+        <br> <br />
+
+        <div class="pull-left">payment:&nbsp;&nbsp; &nbsp; &nbsp;</div>@Session["payment"]<br /><br />
+
+
+
+        <input type="submit" class="btn-default" value="Continue" style="margin-left:160px">
+    </form>
+
+
+</div>
